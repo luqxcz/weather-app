@@ -22,6 +22,13 @@ let weather = {
     document.querySelector(".temp").innerText = temp + " °C"
     document.querySelector(".description").innerText = description
     document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%"
-    document.querySelector(".wind").innerText = "Wind speed: " + speed + "km/h"
+    document.querySelector(".wind").innerText = "Wind speed: " + speed + " km/h"
+  },
+  search: function () {
+    this.fetchWeather(document.querySelector(".search-bar").value)
   }
 }
+
+document.querySelector(".search button").addEventListener("click", function () {
+  weather.search()
+})
