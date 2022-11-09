@@ -23,6 +23,7 @@ let weather = {
     document.querySelector(".description").innerText = description
     document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%"
     document.querySelector(".wind").innerText = "Wind speed: " + speed + " km/h"
+    document.querySelector(".weather").classList.remove("loading")
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value)
@@ -38,3 +39,5 @@ document.querySelector(".search-bar").addEventListener("keyup", function (event)
     weather.search()
   }
 })
+
+weather.fetchWeather("Montreal")
